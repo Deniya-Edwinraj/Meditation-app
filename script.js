@@ -8,8 +8,6 @@ let isPlaying = false;
 
 play.addEventListener("click", () => {
   togglePlayPause();
-  song.classList.toggle("hide");
-  main.classList.toggle("hide");
 });
 
 back.addEventListener("click", () => {
@@ -21,17 +19,14 @@ back.addEventListener("click", () => {
 function togglePlayPause() {
   if (isPlaying) {
     audioPlayer.pause();
+    play.classList.remove("fa-pause");
+    play.classList.add("fa-play");
   } else {
     audioPlayer.play();
+    play.classList.remove("fa-play");
+    play.classList.add("fa-pause");
+    song.classList.toggle("hide");
+    main.classList.toggle("hide");
   }
   isPlaying = !isPlaying;
 }
-
-
-
-
-
-
-
-
-
